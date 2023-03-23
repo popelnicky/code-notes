@@ -1,0 +1,33 @@
+{
+  "name": "code-notes",
+  "version": "1.0.0",
+  "description": "It is a R&D project where author is practicing in Algos and Data Structures",
+  "main": "main.js",
+  "type": "module",
+  "scripts": {
+    "build": "webpack --config ./build_configurations/webpack.config.js --mode production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/popelnicky/code-notes.git"
+  },
+  "keywords": [
+    "javascript",
+    "algos",
+    "data structures"
+  ],
+  "author": "popelnicky@live.ru",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/popelnicky/code-notes/issues"
+  },
+  "homepage": "https://github.com/popelnicky/code-notes#readme",
+  "devDependencies": {
+    "eslint": "^7.3.0",
+    "webpack": "^5.72.0",
+    "webpack-cli": "^4.9.2"
+  },
+  "dependencies": {
+
+  }
+}
