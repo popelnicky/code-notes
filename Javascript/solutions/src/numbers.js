@@ -1,6 +1,6 @@
 export class Numbers {
   /*
-   * Given 1) a number and 2) exponent. Needs to exponentiate number to exponent
+   * Given 1) an integer number and 2) an integer exponent. Needs to exponentiate number to exponent
    *
    * Examples:
    *
@@ -15,7 +15,38 @@ export class Numbers {
    * - An exponent >= 0. Otherwise return 0.
    */
   exponentiate(num, exponent) {
-    return 0;
+    exponent = parseInt(exponent);
+
+    if (exponent == 0) {
+      return 1;
+    }
+
+    if (!exponent || exponent < 0) {
+      return 0;
+    }
+
+    num = parseInt(num);
+
+    if (!num) {
+      return 0;
+    }
+
+    const margin = 2 ** 31;
+    const negative = num < 0 && exponent % 2 > 0 ? -1 : 1;
+
+    num *= negative;
+  
+    let result = num * this.exponentiate(num, exponent - 1);
+
+    if (result > margin) {
+      return 0;
+    }
+
+    if (result == margin && negative > 0) {
+      return 0;
+    }
+
+    return negative * result;
   }
 
   /*
@@ -33,6 +64,28 @@ export class Numbers {
    * A reversed number should be in -2^31 to 2^31 - 1 range. When it is out of range - return 0.
    */
   reverse(num) {
-    return 0;
+    num = parseInt(num);
+
+    if (!num) {
+      return 0;
+    }
+
+    let result = 0;
+    const margin = 2 ** 31;
+    const negative = num < 0 ? -1 : 1;
+
+    num *= negative;
+
+    while (num > 0) {
+      result = (result * 10) + (num % 10);
+
+      if (result >= margin) {
+        return 0;
+      }
+
+      num = parseInt(num / 10);
+    }
+
+    return negative * result;
   }
 }

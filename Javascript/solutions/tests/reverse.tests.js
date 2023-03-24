@@ -4,6 +4,24 @@ import { Numbers } from "../src/numbers.js";
 describe("reverseTests", () => {
   const solutions = new Numbers();
 
+  it("reverseNonNumTest", () => {
+    let actual = solutions.reverse();
+
+    expect(actual).to.equal(0);
+
+    actual = solutions.reverse(undefined);
+
+    expect(actual).to.equal(0);
+
+    actual = solutions.reverse(null);
+
+    expect(actual).to.equal(0);
+
+    actual = solutions.reverse("");
+
+    expect(actual).to.equal(0);
+  });
+
   it("reverseSimpleNumTest", () => {
     const actual = solutions.reverse(123);
 
@@ -57,19 +75,53 @@ describe("reverseTests", () => {
     expect(actual).to.equal(expected);
   });
 
-  // TODO:
-  it("reverseMaxIntNumTest", () => {
-    const expected = 65335;
-    const actual = solutions.reverse(expected);
+  it("reverseFloatNumTest", () => {
+    const actual = solutions.reverse(167.056);
 
-    expect(actual).to.equal(expected);
+    expect(actual).to.equal(761);
   });
 
-  //TODO:
-  it("reverseMinIntNumTest", () => {
-    const expected = -65336;
+  it("reverseNegativeFloatNumTest", () => {
+    const actual = solutions.reverse(-234.999);
+
+    expect(actual).to.equal(-432);
+  });
+
+  it("reverseFloatDecNumTest", () => {
+    const actual = solutions.reverse(550.186);
+
+    expect(actual).to.equal(55);
+  });
+
+  it("reverseNegativeFloatDecNumTest", () => {
+    const actual = solutions.reverse(-1300.786);
+
+    expect(actual).to.equal(-31);
+  });
+
+  it("reverseMaxIntNumTest", () => {
+    const expected = (2 ** 31) - 1;
     const actual = solutions.reverse(expected);
 
-    expect(actual).to.equal(expected);
+    expect(actual).to.equal(0);
+  });
+
+  it("reverseMinIntNumTest", () => {
+    const expected = -1 * (2 ** 31);
+    const actual = solutions.reverse(expected);
+
+    expect(actual).to.equal(0);
+  });
+
+  it("reverseStringNumTest", () => {
+    const actual = solutions.reverse("-65530");
+
+    expect(actual).to.equal(-3556);
+  });
+
+  it("reverseWrongStringNumTest", () => {
+    const actual = solutions.reverse("a95");
+
+    expect(actual).to.equal(0);
   });
 });
