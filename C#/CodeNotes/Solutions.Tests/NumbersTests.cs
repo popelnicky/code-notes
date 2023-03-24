@@ -43,4 +43,44 @@ public class NumbersTests
 
         actual = solutions.Reverse(int.MinValue);
     }
+
+    [Test]
+    public void ExponentiateTest() {
+        var expected = 8;
+        var actual = solutions.Exponentiate(2, 3);
+
+        Assert.That(actual, Is.EqualTo(expected));
+
+        expected = 1;
+        actual = solutions.Exponentiate(2, 0);
+
+        Assert.That(actual, Is.EqualTo(expected));
+
+        actual = solutions.Exponentiate(-4, 0);
+
+        Assert.That(actual, Is.EqualTo(expected));
+
+        actual = solutions.Exponentiate(0, 0);
+
+        Assert.That(actual, Is.EqualTo(expected));
+
+        expected = -100000;
+        actual = solutions.Exponentiate(-10, 5);
+
+        Assert.That(actual, Is.EqualTo(expected));
+
+        expected = 1000000;
+        actual = solutions.Exponentiate(-10, 6);
+
+        Assert.That(actual, Is.EqualTo(expected));
+
+        expected = 1;
+        actual = solutions.Exponentiate(2, 67);
+
+        Assert.That(actual, Is.EqualTo(expected));
+
+        actual = solutions.Exponentiate(-2, 67);
+
+        Assert.That(actual, Is.EqualTo(expected));
+    }
 }

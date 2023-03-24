@@ -1,9 +1,12 @@
-﻿namespace Solutions
+namespace Solutions;
+
+public class Numbers
 {
-    public class Numbers
-    {
-        public int Reverse(int x) {
-            return 0;
-        }
+    public int Reverse(int num) {
+        return 0;
+    }
+
+    public long Exponentiate(long num, int exponent) {
+        return 0;
     }
 }
