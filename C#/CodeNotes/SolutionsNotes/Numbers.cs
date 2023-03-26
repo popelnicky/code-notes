@@ -45,6 +45,24 @@ public class Numbers
     }
 
     /*
+     * Given the two integer numbers a and b. Needs to find the greatest common divisor for them.
+     * 
+     * Examples:
+     * 
+     * Input => 5, 25
+     * Output => 5
+     * 
+     * Input => 21, -9
+     * Output => 3
+     * 
+     * Input => 25, 5
+     * Output => 5
+     */
+    public int FindGCD(int a, int b) {
+        return 1;
+    }
+
+    /*
      * Given an integer number which needs to reverse
      * 
      * Examples:

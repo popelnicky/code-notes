@@ -35,7 +35,7 @@ export class Numbers {
     const negative = num < 0 && exponent % 2 > 0 ? -1 : 1;
 
     num *= negative;
-  
+
     let result = num * this.exponentiate(num, exponent - 1);
 
     if (result > margin) {
@@ -47,6 +47,24 @@ export class Numbers {
     }
 
     return negative * result;
+  }
+
+  /*
+   * Given the two integer numbers a and b. Needs to find the greatest common divisor for them.
+   *
+   * Examples:
+   *
+   * Input => 5, 25
+   * Output => 5
+   *
+   * Input => 21, -9
+   * Output => 3
+   *
+   * Input => 25, 5
+   * Output => 5
+   */
+  findGCD(a, b) {
+    return 1;
   }
 
   /*
@@ -77,7 +95,7 @@ export class Numbers {
     num *= negative;
 
     while (num > 0) {
-      result = (result * 10) + (num % 10);
+      result = result * 10 + (num % 10);
 
       if (result >= margin) {
         return 0;
