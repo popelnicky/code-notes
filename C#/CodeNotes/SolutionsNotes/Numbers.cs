@@ -3,7 +3,58 @@ namespace SolutionsNotes;
 public class Numbers
 {
     /*
-     * Given 1) an long number and 2) exponent. Needs to exponentiate number to exponent
+     * Given an integer decimal number. Needs to convert it to binary number
+     * 
+     * Examples:
+     * 
+     * Input => 3
+     * Output => 11
+     * 
+     * Input => 8
+     * Output => 1000
+     * 
+     * Input => -7
+     * Output => 10000111
+     * 
+     * Constraints:
+     * - An integer decimal number should be in -2^7 to 2^7 - 1 range. When it is out of range - return 0.
+     * - A binary number should has no more than 8 digits (bits)
+     */
+    public int ConvertDecToBin(int num) {
+        var margin = (int) Exponentiate(10, 7);
+        var bit = 1;
+        var result = 0;
+        var negative = num < 0 ? -1 : 1;
+
+        num *= negative;
+
+        while (num > 0) {
+            var digit = num % 2;
+
+            result += bit * digit;
+
+            if (result > margin) {
+                return 0;
+            }
+
+            num = (num - digit) / 2;
+
+            bit *= 10;
+        }
+
+        if (negative > 0 && result == margin) {
+            return 0;
+        }
+
+        if (negative < 0 && result == margin) {
+            return result;
+        }
+
+        return negative < 0 ? margin + result : result;
+    }
+
+    /*
+     * Given 1) a long number and 2) exponent. Needs to exponentiate number to exponent
      * 
      * Examples:
      * 

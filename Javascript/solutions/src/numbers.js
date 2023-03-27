@@ -1,5 +1,62 @@
 export class Numbers {
   /*
+   * Given an integer decimal number. Needs to convert it to binary number
+   *
+   * Examples:
+   *
+   * Input => 3
+   * Output => 11
+   *
+   * Input => 8
+   * Output => 1000
+   *
+   * Input => -7
+   * Output => 10000111
+   *
+   * Constraints:
+   * - An integer decimal number should be in -2^7 to 2^7 - 1 range. When it is out of range - return 0.
+   * - A binary number should has no more than 8 digits (bits)
+   */
+  convertDecToBin(num) {
+    num = parseInt(num);
+
+    if (isNaN(num)) {
+      return 0;
+    }
+
+    let bit = 1;
+    const margin = 10 ** 7;
+    let result = 0;
+    const negative = num < 0 ? -1 : 1;
+
+    num *= negative;
+
+    while (num > 0) {
+      let digit = num % 2;
+
+      result += bit * digit;
+
+      if (result > margin) {
+        return 0;
+      }
+
+      num = (num - digit) / 2;
+
+      bit *= 10;
+    }
+
+    if (negative > 0 && result == margin) {
+      return 0;
+    }
+
+    if (negative < 0 && result == margin) {
+      return result;
+    }
+
+    return negative < 0 ? margin + result : result;
+  }
+
+  /*
    * Given 1) an integer number and 2) an integer exponent. Needs to exponentiate number to exponent
    *
    * Examples:
