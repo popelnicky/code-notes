@@ -42,12 +42,8 @@ public class Numbers
             bit *= 10;
         }
 
-        if (negative > 0 && result == margin) {
-            return 0;
-        }
-
-        if (negative < 0 && result == margin) {
-            return result;
+        if (result == margin) {
+            return negative < 0 ? result : 0;
         }
 
         return negative < 0 ? margin + result : result;
