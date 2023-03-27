@@ -60,11 +60,29 @@ export class Numbers {
    * Input => 21, -9
    * Output => 3
    *
-   * Input => 25, 5
-   * Output => 5
+   * Input => 13, 7
+   * Output => 1
    */
   findGCD(a, b) {
-    return 1;
+    a = parseInt(a);
+    b = parseInt(b);
+
+    if (isNaN(a) || isNaN(b)) {
+      return 0;
+    }
+
+    if (a === 0 && b === 0) {
+      return 0;
+    }
+
+    a = a < 0 ? -1 * a : a;
+    b = b < 0 ? -1 * b : b;
+
+    while (b > 0) {
+      [a, b] = [b, a % b];
+    }
+
+    return a;
   }
 
   /*

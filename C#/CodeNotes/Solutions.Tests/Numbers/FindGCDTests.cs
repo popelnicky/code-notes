@@ -87,7 +87,7 @@ public class FindGCDTests
 
     [Test]
     public void FindGCDForNegativeOddNumsTest() {
-        CheckFindGCDWith(-39, -27, 1);
+        CheckFindGCDWith(-39, -27, 3);
     }
 
     [Test]
@@ -97,12 +97,12 @@ public class FindGCDTests
 
     [Test]
     public void FindGCDForNegativeOddAndEvenNumsTest() {
-        CheckFindGCDWith(-21, 6, 1);
+        CheckFindGCDWith(-21, 6, 3);
     }
 
     [Test]
     public void FindGCDForEvenAndNegativeOddNumsTest() {
-        CheckFindGCDWith(12, -15, 1);
+        CheckFindGCDWith(12, -15, 3);
     }
 
     [Test]

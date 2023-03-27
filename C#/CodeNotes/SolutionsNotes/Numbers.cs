@@ -55,11 +55,26 @@ public class Numbers
      * Input => 21, -9
      * Output => 3
      * 
-     * Input => 25, 5
-     * Output => 5
+     * Input => 49, 14
+     * Output => 7
      */
     public int FindGCD(int a, int b) {
-        return 1;
+        if (a == 0 && b == 0) {
+            return 0;
+        }
+
+        a = a < 0 ? -1 * a : a;
+        b = b < 0 ? -1 * b : b;
+
+        var rd = 0;
+
+        while (b > 0) {
+            rd = a % b;
+            a = b;
+            b = rd;
+        }
+
+        return a;
     }
 
     /*

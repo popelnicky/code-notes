@@ -15,6 +15,78 @@ describe("findGCDTests", () => {
     expect(num % gcd).to.equal(0);
   };
 
+  it("findGCDForNullAndNumTest", () => {
+    const actual = solutions.findGCD(null, 1);
+
+    expect(actual).to.equal(0);
+  });
+
+  it("findGCDForNumAndNullTest", () => {
+    const actual = solutions.findGCD(-2, null);
+
+    expect(actual).to.equal(0);
+  });
+
+  it("findGCDForNullAndNullTest", () => {
+    const actual = solutions.findGCD(null, null);
+
+    expect(actual).to.equal(0);
+  });
+
+  it("findGCDForUndefinedAndNumTest", () => {
+    const actual = solutions.findGCD(undefined, 6);
+
+    expect(actual).to.equal(0);
+  });
+
+  it("findGCDForNumAndUndefinedTest", () => {
+    const actual = solutions.findGCD(10, undefined);
+
+    expect(actual).to.equal(0);
+  });
+
+  it("findGCDForUndefinedAndUndefinedTest", () => {
+    const actual = solutions.findGCD(undefined, undefined);
+
+    expect(actual).to.equal(0);
+  });
+
+  it("findGCDForEmptyAndNumTest", () => {
+    const actual = solutions.findGCD("", -7);
+
+    expect(actual).to.equal(0);
+  });
+
+  it("findGCDForNumAndEmptyTest", () => {
+    const actual = solutions.findGCD(19, "");
+
+    expect(actual).to.equal(0);
+  });
+
+  it("findGCDForEmptyAndEmptyTest", () => {
+    const actual = solutions.findGCD("", "");
+
+    expect(actual).to.equal(0);
+  });
+
+  it("findGCDForNaNAndNumTest", () => {
+    const actual = solutions.findGCD(NaN, 3);
+
+    expect(actual).to.equal(0);
+  });
+
+  it("findGCDForNumAndNaNTest", () => {
+    const actual = solutions.findGCD(-11, NaN);
+
+    expect(actual).to.equal(0);
+  });
+
+  it("findGCDForNaNAndNaNTest", () => {
+    const actual = solutions.findGCD(NaN, NaN);
+
+    expect(actual).to.equal(0);
+  });
+
   it("findGCDForFirstWrongStringNumTest", () => {
     const actual = solutions.findGCD("six", 25);
 
@@ -136,7 +208,7 @@ describe("findGCDTests", () => {
   });
 
   it("findGCDForNegativeOddNumsTest", () => {
-    checkFindGCDWith(-39, -27, 1);
+    checkFindGCDWith(-39, -27, 3);
   });
 
   it("findGCDForNegativeEvenNumsTest", () => {
@@ -144,11 +216,11 @@ describe("findGCDTests", () => {
   });
 
   it("findGCDForNegativeOddAndEvenNumsTest", () => {
-    checkFindGCDWith(-21, -6, 1);
+    checkFindGCDWith(-21, -6, 3);
   });
 
   it("findGCDForEvenAndNegativeOddNumsTest", () => {
-    checkFindGCDWith(12, -15, 1);
+    checkFindGCDWith(12, -15, 3);
   });
 
   it("findGCDForBigEvenNumsTest", () => {
