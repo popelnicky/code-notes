@@ -24,8 +24,6 @@
   "homepage": "https://github.com/popelnicky/code-notes#readme",
   "devDependencies": {
     "eslint": "^7.3.0",
-    "webpack": "^5.72.0",
-    "webpack-cli": "^4.9.2",
     "chai": "^4.3.7",
     "mocha": "^10.2.0"
   },
