@@ -18,7 +18,36 @@ export class Numbers {
    * - An integer decimal number should be in -2^7 to 2^7 - 1 range.
    */
   convertBinToDec(num) {
-    return 0;
+    num = parseInt(num);
+
+    if (isNaN(num)) {
+      return 0;
+    }
+
+    let bit = 0;
+    let result = 0;
+    let negative = 1;
+
+    while (num > 0) {
+      if (bit > 6) {
+        negative = -1;
+        result = result == 0 ? 2 ** 7 : result;
+
+        break;
+      }
+
+      let digit = num % 10;
+
+      if (digit > 1) {
+        return 0;
+      }
+
+      result += 2 ** bit * digit;
+      num = (num - digit) / 10;
+      bit++;
+    }
+
+    return num > 1 ? 0 : negative * result;
   }
 
   /*
