@@ -182,7 +182,7 @@ public class Numbers
      * Constraints:
      * A reversed number should be in -2^31 to 2^31 - 1 range. When it is out of range - return 0.
      */
-    public int ReverseNum(int num) {
+    public int Reverse(int num) {
         if (num == 0) {
             return 0;
         }
