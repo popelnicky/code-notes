@@ -1,5 +1,5 @@
 import { expect } from "chai";
-import { Numbers } from "../src/numbers.js";
+import { Numbers } from "../../src/numbers.js";
 
 describe("findGCDTests", () => {
   const solutions = new Numbers();

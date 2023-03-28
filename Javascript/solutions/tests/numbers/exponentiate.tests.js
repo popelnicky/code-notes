@@ -1,5 +1,5 @@
 import { expect } from "chai";
-import { Numbers } from "../src/numbers.js";
+import { Numbers } from "../../src/numbers.js";
 
 describe("exponentiateTests", () => {
   const solutions = new Numbers();
@@ -55,7 +55,7 @@ describe("exponentiateTests", () => {
 
     expect(actual).to.equal(expected);
   });
-  
+
   it("exponentiateNumToPowerThreeTest", () => {
     const actual = solutions.exponentiate(2, 3);
 
@@ -111,7 +111,7 @@ describe("exponentiateTests", () => {
   });
 
   it("exponentiateNumToLeftRangeBorderTest", () => {
-    const expected = -1 * (2 ** 31);
+    const expected = -1 * 2 ** 31;
     const actual = solutions.exponentiate(-2, 31);
 
     expect(actual).to.equal(expected);
@@ -140,7 +140,7 @@ describe("exponentiateTests", () => {
 
     expect(actual).to.equal(-64);
   });
-  
+
   it("exponentiateNumToFloatPowerTest", () => {
     const actual = solutions.exponentiate(2, 4.33);
 

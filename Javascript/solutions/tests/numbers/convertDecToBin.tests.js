@@ -1,5 +1,5 @@
 import { expect } from "chai";
-import { Numbers } from "../src/numbers.js";
+import { Numbers } from "../../src/numbers.js";
 
 describe("convertDecToBinTests", () => {
   const solutions = new Numbers();

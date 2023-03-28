@@ -1,5 +1,5 @@
 import { expect } from "chai";
-import { Numbers } from "../src/numbers.js";
+import { Numbers } from "../../src/numbers.js";
 
 describe("reverseTests", () => {
   const solutions = new Numbers();
@@ -100,14 +100,14 @@ describe("reverseTests", () => {
   });
 
   it("reverseMaxIntNumTest", () => {
-    const expected = (2 ** 31) - 1;
+    const expected = 2 ** 31 - 1;
     const actual = solutions.reverse(expected);
 
     expect(actual).to.equal(0);
   });
 
   it("reverseMinIntNumTest", () => {
-    const expected = -1 * (2 ** 31);
+    const expected = -1 * 2 ** 31;
     const actual = solutions.reverse(expected);
 
     expect(actual).to.equal(0);

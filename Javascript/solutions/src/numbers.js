@@ -1,5 +1,27 @@
 export class Numbers {
   /*
+   * Given an integer binary number. Needs to convert it to a decimal number
+   *
+   * Examples:
+   *
+   * Input => 101
+   * Output => 5
+   *
+   * Input => 10000111
+   * Output => -7
+   *
+   * Input => 1111111
+   * Output => 127
+   *
+   * Constraints:
+   * - A binary number should has no more than 8 digits (bits)
+   * - An integer decimal number should be in -2^7 to 2^7 - 1 range.
+   */
+  convertBinToDec(num) {
+    return 0;
+  }
+
+  /*
    * Given an integer decimal number. Needs to convert it to binary number
    *
    * Examples:
