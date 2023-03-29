@@ -1,11 +1,6 @@
 <h1 align="center">Code notes</h1>
 <h2>About</h2>
-<div style="display: block;
-            margin: 0 0 15px 0;
-            padding: 15px;
-            text-align: justify;
-            border: 1px solid #999;
-            border-radius: 5px;">
+<div>
     <p>
         Here you will find an author's code notes where he puts implementations and solutions in the context of Algorithms and Data Structures, which the author likes.
     </p>
@@ -14,12 +9,10 @@
     </p>
 </div>
 <h2>Content</h2>
-<div style="display: block;
-            margin: 0 0 15px 0;
-            padding: 5px 0 0 0;">
-    <ol style="font-weight: 700;">
+<div>
+    <ol>
         <li>Numbers</li>
-        <ul style="font-weight: 600;">
+        <ul>
             <li>ConvertBinToDec(binary)</li>
             <li>ConvertDecToBin(decimal)</li>
             <li>Exponentiate(num, exponent)</li>
