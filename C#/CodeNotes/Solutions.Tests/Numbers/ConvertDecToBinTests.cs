@@ -1,13 +1,13 @@
-using NumbersNotes = SolutionsNotes.Numbers;
+using NumbersSolutions = SolutionsNotes.Solutions.Numbers;
 
 namespace Solutions.Tests.Numbers;
 public class ConvertDecToBinTests
 {
-    private NumbersNotes solutions;
+    private NumbersSolutions solutions;
 
     [SetUp]
     public void Setup() {
-        solutions = new NumbersNotes();
+        solutions = new NumbersSolutions();
     }
 
     [Test]

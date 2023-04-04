@@ -1,4 +1,4 @@
-namespace SolutionsNotes;
+namespace SolutionsNotes.Solutions;
 
 public class Numbers
 {
@@ -121,8 +121,8 @@ public class Numbers
 
         num /= negative;
 
-        ulong margin = ulong.MaxValue / 2 + 1;
-        ulong result = (ulong) (num * Exponentiate(num, exponent - 1));
+        var margin = ulong.MaxValue / 2 + 1;
+        var result = (ulong) (num * Exponentiate(num, exponent - 1));
 
         if (result > margin) {
             return 0;
@@ -195,7 +195,7 @@ public class Numbers
         digits /= negative;
 
         while (digits > 0) {
-            result = (result * 10) + (digits % 10);
+            result = result * 10 + digits % 10;
 
             if (result >= margin) {
                 return 0;
