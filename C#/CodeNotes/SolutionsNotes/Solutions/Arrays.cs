@@ -21,6 +21,30 @@ public class Arrays
      * Output => ["7","fizz","11","fizzbuzz","14","buzz"]
      */
     public string[] FizzBuzz(int[] nums) {
-        return new string[0];
+        if (nums == null) {
+            return new string[0];
+        }
+
+        const string fizz = "fizz";
+        const string buzz = "buzz";
+
+        var result = new string[nums.Length];
+
+        for (var i = 0; i < nums.Length; i++) {
+            var num = nums[i];
+            string elem = null;
+
+            if (num % 3 == 0) {
+                elem = fizz;
+            }
+
+            if (num % 5 == 0) {
+                elem += buzz;
+            }
+
+            result[i] = elem ?? $"{num}";
+        }
+        
+        return result;
     }
 }

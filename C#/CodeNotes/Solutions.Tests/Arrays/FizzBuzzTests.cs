@@ -1,4 +1,3 @@
-using NUnit.Framework.Constraints;
 using ArraysSolutions = SolutionsNotes.Solutions.Arrays;
 
 namespace Solutions.Tests.Arrays;
@@ -49,7 +48,7 @@ public class FizzBuzzTests
         for (var i = 0; i < nums.Length; i++) {
             Assert.That(actual[i], Is.EqualTo(FIZZBUZZ));
 
-            Assert.That(actual[i], Is.EqualTo(nums[i].ToString()));
+            Assert.That(actual[i], Is.Not.EqualTo(nums[i].ToString()));
         }
     }
 
@@ -103,7 +102,7 @@ public class FizzBuzzTests
 
     [Test]
     public void FizzBuzzOnlyFizzBuzzTest() {
-        var nums = new int[6] { 45, 60, 15, 120, 75, 25 };
+        var nums = new int[6] { 45, 60, 15, 120, 75, 105 };
         var actual = solutions.FizzBuzz(nums);
 
         BaseCheck(actual, nums.Length);
@@ -169,7 +168,7 @@ public class FizzBuzzTests
     public void FizzBuzzNormalSequenceTest() {
         var nums = new int[16];
 
-        for (var i = 0; i < 16; i++) {
+        for (var i = 0; i < nums.Length; i++) {
             nums[i] = i;
         }
 
@@ -177,8 +176,8 @@ public class FizzBuzzTests
 
         BaseCheck(actual, nums.Length);
 
-        for (var i = 1; i <= actual.Length; i++) {
-            var elem = actual[i - 1];
+        for (var i = 0; i < actual.Length; i++) {
+            var elem = actual[i];
 
             if (i == 3 || i == 6 || i == 9 || i == 12) {
                 Assert.That(elem, Is.EqualTo(FIZZ));
@@ -242,7 +241,7 @@ public class FizzBuzzTests
                 continue;
             }
 
-            Assert.That(elem, Is.EqualTo(i.ToString()));
+            Assert.That(elem, Is.EqualTo(nums[i].ToString()));
         }
     }
 
