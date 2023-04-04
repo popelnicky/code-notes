@@ -31,7 +31,7 @@ public class FizzBuzzTests
 
     [Test]
     public void FizzBuzzOneElementTest() {
-        var actual = solutions.FizzBuzz(new int[1] { 4 });
+        var actual = solutions.FizzBuzz(new int[] { 4 });
 
         BaseCheck(actual, 1);
         
@@ -40,7 +40,7 @@ public class FizzBuzzTests
 
     [Test]
     public void FizzBuzzAllZerosTest() {
-        var nums = new int[4] { 0, 0, 0, 0 };
+        var nums = new int[] { 0, 0, 0, 0 };
         var actual = solutions.FizzBuzz(nums);
 
         BaseCheck(actual, nums.Length);
@@ -54,7 +54,7 @@ public class FizzBuzzTests
 
     [Test]
     public void FizzBuzzNoFizzBuzzTest() {
-        var nums = new int[9] { 1, 2, 4, 7, 8, 11, 13, 14, 16 };
+        var nums = new int[] { 1, 2, 4, 7, 8, 11, 13, 14, 16 };
         var actual = solutions.FizzBuzz(nums);
 
         BaseCheck(actual, nums.Length);
@@ -70,7 +70,7 @@ public class FizzBuzzTests
 
     [Test]
     public void FizzBuzzOnlyFizzTest() {
-        var nums = new int[6] { 3, 3, 27, 39, 12, 66 };
+        var nums = new int[] { 3, 3, 27, 39, 12, 66 };
         var actual = solutions.FizzBuzz(nums);
 
         BaseCheck(actual, nums.Length);
@@ -86,7 +86,7 @@ public class FizzBuzzTests
 
     [Test]
     public void FizzBuzzOnlyBuzzTest() {
-        var nums = new int[6] { 5, 100, 55, 70, 20, 65 };
+        var nums = new int[] { 5, 100, 55, 70, 20, 65 };
         var actual = solutions.FizzBuzz(nums);
 
         BaseCheck(actual, nums.Length);
@@ -102,7 +102,7 @@ public class FizzBuzzTests
 
     [Test]
     public void FizzBuzzOnlyFizzBuzzTest() {
-        var nums = new int[6] { 45, 60, 15, 120, 75, 105 };
+        var nums = new int[] { 45, 60, 15, 120, 75, 105 };
         var actual = solutions.FizzBuzz(nums);
 
         BaseCheck(actual, nums.Length);
@@ -118,7 +118,7 @@ public class FizzBuzzTests
 
     [Test]
     public void FizzBuzzOnlyFizzAndBuzzTest() {
-        var nums = new int[6] { 12, 35, 21, 20, 39, 40 };
+        var nums = new int[] { 12, 35, 21, 20, 39, 40 };
         var actual = solutions.FizzBuzz(nums);
 
         BaseCheck(actual, nums.Length);
@@ -144,7 +144,7 @@ public class FizzBuzzTests
 
     [Test]
     public void FizzBuzzSmallNormalSequenceTest() {
-        var nums = new int[4] { 1, 2, 3, 4 };
+        var nums = new int[] { 1, 2, 3, 4 };
         var actual = solutions.FizzBuzz(nums);
 
         BaseCheck(actual, nums.Length);
@@ -209,7 +209,7 @@ public class FizzBuzzTests
 
     [Test]
     public void FizzBuzzNormalTest() {
-        var nums = new int[11] { 7, 9, 11, 45, 14, 25, 67, 44, 21, 79, 30 };
+        var nums = new int[] { 7, 9, 11, 45, 14, 25, 67, 44, 21, 79, 30 };
         var actual = solutions.FizzBuzz(nums);
 
         BaseCheck(actual, nums.Length);

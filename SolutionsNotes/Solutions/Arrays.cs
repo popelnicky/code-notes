@@ -1,6 +1,14 @@
 namespace SolutionsNotes.Solutions;
 public class Arrays
 {
+    /*
+     * Given an array with integer numbers more than -1. Needs to return a min result of multiplication two numbers from array:
+     * 
+     * Examples:
+     * 
+     * Input => [9,5,7,2,4,5,3,5]
+     * Output => 6
+     */
     public int FindMinMulti(int[] nums) {
         return 0;
     }
@@ -22,7 +30,7 @@ public class Arrays
      */
     public string[] FizzBuzz(int[] nums) {
         if (nums == null) {
-            return new string[0];
+            return Array.Empty<string>();
         }
 
         const string fizz = "fizz";
