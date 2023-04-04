@@ -21,6 +21,7 @@
         </ul>
         <li>Arrays</li>
         <ul>
+            <li>FindMinMulti(nums)</li>
             <li>FizzBuzz(nums)</li>
         </ul>
     </ol>

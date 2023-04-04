@@ -10,7 +10,27 @@ public class Arrays
      * Output => 6
      */
     public int FindMinMulti(int[] nums) {
-        return 0;
+        if (nums == null || nums.Length < 2) {
+            return 0;
+        }
+
+        var first = nums[0];
+        var second = nums[1];
+
+        for (var i = 2; i < nums.Length; i++) {
+            if (first > nums[i]) {
+                second = first;
+                first = nums[i];
+
+                continue;
+            }
+
+            if (second > nums[i]) {
+                second = nums[i];
+            }
+        }
+
+        return first * second;
     }
 
     /*
