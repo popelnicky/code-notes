@@ -2,6 +2,34 @@ namespace SolutionsNotes.Solutions;
 public class Arrays
 {
     /*
+     * Given an array with integer numbers. Needs to return a sorted array (bubble sorting).
+     * 
+     * Examples:
+     * 
+     * Input => [9,5,7,2,4,5,3,5]
+     * Output => [2,3,4,5,5,5,7,9]
+     */
+    public int[] BubbleSort(int[] nums) {
+        if (nums == null || nums.Length < 1) {
+            return new int[0];
+        }
+        
+        if (nums.Length == 1) {
+            return nums;
+        }
+
+        for (var i = 1; i < nums.Length; i++) {
+            for (var j = 0; j < nums.Length - i; j++) {
+                if (nums[j] > nums[j + 1]) {
+                    (nums[j], nums[j + 1]) = (nums[j + 1], nums[j]);
+                }
+            }
+        }
+
+        return nums;
+    }
+
+    /*
      * Given an array with integer numbers more than -1. Needs to return a min result of multiplication two numbers from array:
      * 
      * Examples:
@@ -72,7 +100,19 @@ public class Arrays
 
             result[i] = elem ?? $"{num}";
         }
-        
+
         return result;
+    }
+
+    public int[] HeapSort(int[] nums) {
+        return new int[0];
+    }
+
+    public int[] MergeSort(int[] nums) {
+        return new int[0];
+    }
+
+    public int[] QuickSort(int[] nums) {
+        return new int[0];
     }
 }
