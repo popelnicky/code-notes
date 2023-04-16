@@ -112,6 +112,14 @@ public class Arrays
         return new int[0];
     }
 
+    /*
+     * Given an array with integer numbers. Needs to return a sorted array (bubble sorting).
+     * 
+     * Examples:
+     * 
+     * Input => [9,5,7,2,4,5,3,5]
+     * Output => [2,3,4,5,5,5,7,9]
+     */
     public int[] QuickSort(int[] nums) {
         return new int[0];
     }

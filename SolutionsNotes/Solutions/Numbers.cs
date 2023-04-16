@@ -117,18 +117,37 @@ public class Numbers
             return 1;
         }
 
-        long negative = num < 0 && exponent % 2 > 0 ? -1 : 1;
+        long negative = 1;
 
-        num /= negative;
+        if (num < 0) {
+            num /= -1;
 
-        var margin = ulong.MaxValue / 2 + 1;
-        var result = (ulong) (num * Exponentiate(num, exponent - 1));
+            negative = exponent % 2 > 0 ? -1 : 1;
+        }
+        
 
-        if (result > margin) {
+        var max = ulong.MaxValue / 2 + 1;
+        var margin = (ulong) Math.Sqrt(max); // TODO: Needs to use your own square root method
+        ulong result = (ulong) num;
+        var exp = 2;
+
+        while (exp <= exponent) {
+            if (result >= margin) {
+                return 0;
+            }
+
+            result *= result;
+
+            exp *= 2;
+        }
+
+        result *= (ulong) Exponentiate(num, exponent - exp / 2);
+
+        if (result > max) {
             return 0;
         }
 
-        if (result == margin && negative > 0) {
+        if (result == max && negative > 0) {
             return 0;
         }
 
