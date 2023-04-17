@@ -11,20 +11,20 @@
 <h2>Content</h2>
 <div>
     <ol>
-        <li>Numbers</li>
+        <li><strong>Numbers</strong></li>
         <ul>
-            <li>ConvertBinToDec(binary)</li>
-            <li>ConvertDecToBin(decimal)</li>
-            <li>Exponentiate(num, exponent)</li>
-            <li>FindGCD(a, b)</li>
-            <li>Reverse(num)</li>
+            <li><code>ConvertBinToDec(binary)</code></li>
+            <li><code>ConvertDecToBin(decimal)</code></li>
+            <li><code>Exponentiate(num, exponent)</code></li>
+            <li><code>FindGCD(a, b)</code></li>
+            <li><code>Reverse(num)</code></li>
         </ul>
-        <li>Arrays</li>
+        <li><strong>Arrays</strong></li>
         <ul>
-            <li>BubbleSort(nums)</li>
-            <li>FindMinMulti(nums)</li>
-            <li>FizzBuzz(nums)</li>
-            <li>QuickSort(nums)</li>
+            <li><code>BubbleSort(nums)</code></li>
+            <li><code>FindMinMulti(nums)</code></li>
+            <li><code>FizzBuzz(nums)</code></li>
+            <li><code>QuickSort(nums)</code></li>
         </ul>
     </ol>
 </div>
