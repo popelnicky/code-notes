@@ -121,6 +121,36 @@ public class Arrays
      * Output => [2,3,4,5,5,5,7,9]
      */
     public int[] QuickSort(int[] nums) {
-        return new int[0];
+        if (nums == null || nums.Length < 1) {
+            return new int[0];
+        }
+
+        if (nums.Length == 1) {
+            return nums;
+        }
+
+        return QuickSort(nums, 0, nums.Length - 1);
+    }
+
+    private int[] QuickSort(int[] nums, int li, int hi) {
+        if (li >= hi) {
+            return nums;
+        }
+
+        var pivot = nums[hi];
+        var i = li - 1;
+
+        for (var j = li; j < hi + 1; j++) {
+            if (nums[j] <= pivot) {
+                i++;
+
+                (nums[i], nums[j]) = (nums[j], nums[i]);
+            }
+        }
+
+        QuickSort(nums, li, i - 1);
+        QuickSort(nums, i + 1, hi);
+        
+        return nums;
     }
 }
