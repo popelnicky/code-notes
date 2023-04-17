@@ -24,6 +24,7 @@
             <li>BubbleSort(nums)</li>
             <li>FindMinMulti(nums)</li>
             <li>FizzBuzz(nums)</li>
+            <li>QuickSort(nums)</li>
         </ul>
     </ol>
 </div>
