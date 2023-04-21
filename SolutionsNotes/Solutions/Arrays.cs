@@ -109,7 +109,7 @@ public class Arrays
     }
 
     /*
-     * Given an array with integer numbers. Needs to return a sorted array (bubble sorting).
+     * Given an array with integer numbers. Needs to return a sorted array (merge sorting).
      * 
      * Examples:
      * 
@@ -179,7 +179,7 @@ public class Arrays
     }
 
     /*
-     * Given an array with integer numbers. Needs to return a sorted array (bubble sorting).
+     * Given an array with integer numbers. Needs to return a sorted array (quick sorting).
      * 
      * Examples:
      * 
