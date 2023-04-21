@@ -108,8 +108,82 @@ public class Arrays
         return new int[0];
     }
 
+    /*
+     * Given an array with integer numbers. Needs to return a sorted array (bubble sorting).
+     * 
+     * Examples:
+     * 
+     * Input => [9,5,7,2,4,5,3,5]
+     * Output => [2,3,4,5,5,5,7,9]
+     */
     public int[] MergeSort(int[] nums) {
-        return new int[0];
+        if (nums == null || nums.Length < 1) {
+            return new int[0];
+        }
+
+        if (nums.Length == 1) {
+            return nums;
+        }
+
+        MergeSort(nums, 0, nums.Length - 1);
+
+        return nums;
+    }
+
+    private void MergeSort(int[] nums, int li, int ri) {
+        if (li >= ri) {
+            return;
+        }
+
+        var ci = (li + ri) / 2;
+
+        MergeSort(nums, li, ci);
+        MergeSort(nums, ci + 1, ri);
+
+        Merge(nums, li, ci, ri);
+    }
+
+    private void Merge(int[] nums, int li, int ci, int ri) {
+        var left = new int[ci - li + 1];
+        var right = new int[ri - ci];
+
+        for (var i = 0; i < left.Length; i++) {
+            left[i] = nums[li + i];
+        }
+
+        for (var i = 0; i < right.Length; i++) {
+            right[i] = nums[ci + i + 1];
+        }
+
+        var l = 0;
+        var r = 0;
+        var m = li;
+
+        while (l < left.Length && r < right.Length) {
+            if (left[l] > right[r]) {
+                nums[m] = right[r];
+
+                r++;
+            }
+            else {
+                nums[m] = left[l];
+                l++;
+            }
+
+            m++;
+        }
+
+        for (; l < left.Length; l++) {
+            nums[m] = left[l];
+
+            m++;
+        }
+
+        for (; r < right.Length; r++) {
+            nums[m] = right[r];
+
+            m++;
+        }
     }
 
     /*
