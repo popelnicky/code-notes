@@ -161,28 +161,20 @@ public class Arrays
 
         while (l < left.Length && r < right.Length) {
             if (left[l] > right[r]) {
-                nums[m] = right[r];
+                nums[m++] = right[r++];
 
-                r++;
-            }
-            else {
-                nums[m] = left[l];
-                l++;
+                continue;
             }
 
-            m++;
+            nums[m++] = left[l++];
         }
 
-        for (; l < left.Length; l++) {
+        for (; l < left.Length; l++, m++) {
             nums[m] = left[l];
-
-            m++;
         }
 
-        for (; r < right.Length; r++) {
+        for (; r < right.Length; r++, m++) {
             nums[m] = right[r];
-
-            m++;
         }
     }
 
