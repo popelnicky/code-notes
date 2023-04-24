@@ -11,7 +11,7 @@ public class Arrays
      */
     public int[] BubbleSort(int[] nums) {
         if (nums == null || nums.Length < 1) {
-            return new int[0];
+            return Array.Empty<int>();
         }
         
         if (nums.Length == 1) {
@@ -104,9 +104,60 @@ public class Arrays
         return result;
     }
 
+    /*
+     * Given an array with integer numbers. Needs to return a sorted array (merge sorting).
+     * 
+     * Examples:
+     * 
+     * Input => [9,5,7,2,4,5,3,5]
+     * Output => [2,3,4,5,5,5,7,9]
+     */
     public int[] HeapSort(int[] nums) {
-        return new int[0];
+        if (nums == null || nums.Length < 1) {
+            return Array.Empty<int>();
+        }
+
+        if (nums.Length == 1) {
+            return nums;
+        }
+
+        //BuildMaxHeap(nums);
+
+        //for (var i = nums.Length - 1; i >= 1; i--) {
+        //    (nums[0], nums[i]) = (nums[i], nums[0]);
+
+        //    Heapify(nums, 0, i);
+        //}
+
+        return nums;
     }
+
+    //private void BuildMaxHeap(int[] nums) {
+    //    for (var i = nums.Length / 2 - 1; i >= 0; i--) {
+    //        Heapify(nums, i, nums.Length);
+    //    }
+    //}
+
+    //private void Heapify(int[] nums, int i, int n) {
+    //    var l = 2 * i;
+    //    var r = 2 * i + 1;
+
+    //    if (l >= nums.Length || r >= nums.Length) {
+    //        return;
+    //    }
+
+    //    var mi = l <= n && nums[l] > nums[i] ? l : i;
+
+    //    if (r <= n && nums[r] > nums[mi]) {
+    //        mi = r;
+    //    }
+
+    //    if (mi != i) {
+    //        (nums[i], nums[mi]) = (nums[mi], nums[i]);
+
+    //        Heapify(nums, mi, n);
+    //    }
+    //}
 
     /*
      * Given an array with integer numbers. Needs to return a sorted array (merge sorting).
@@ -118,7 +169,7 @@ public class Arrays
      */
     public int[] MergeSort(int[] nums) {
         if (nums == null || nums.Length < 1) {
-            return new int[0];
+            return Array.Empty<int>();
         }
 
         if (nums.Length == 1) {
@@ -188,7 +239,7 @@ public class Arrays
      */
     public int[] QuickSort(int[] nums) {
         if (nums == null || nums.Length < 1) {
-            return new int[0];
+            return Array.Empty<int>();
         }
 
         if (nums.Length == 1) {
